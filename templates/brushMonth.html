@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<style>
+.area {
+  fill: steelblue;
+  clip-path: url(#clip);
+}
+
+.zoom {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
+ </style>
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/png" href="static/assets/img/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<title>Light Bootstrap Dashboard by Creative Tim</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="./static/d3.js"></script>
+ <script type="text/javascript" src="./static/bar_chart.js"></script>
+ <script type="text/javascript" src="./static/ScatterPlot.js"></script>
+ <script type="text/javascript" src="./static/Scatter_Matrix.js"></script>
+ <script type="text/javascript" src="./static/line_chart.js"></script>
+
+    <!-- Bootstrap core CSS     -->
+    <link href="static/assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="static/assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="static/assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="static/assets/css/demo.css" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="static/assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
+
+
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar" data-color="green" data-image="static/assets/img/sidebar-5.jpg">
+
+    <!--
+
+        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
+        Tip 2: you can also add an image using data-image tag
+
+    -->
+
+    	<div class="sidebar-wrapper">
+            <!-- <div class="logo">
+                <a href="http://www.creative-tim.com" class="simple-text">
+                    Creative Tim
+                </a>
+            </div> -->
+
+            <ul class="nav">
+                <li>
+                    <a href="elbow.html">
+                        <i class="pe-7s-graph"></i>
+                        <p>Elbow Plot</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="topLoadingsStratified.html">
+                        <i class="pe-7s-user"></i>
+                        <p>Stratified Top Loadings</p>
+                    </a>
+                </li>
+               
+                <li>
+                    <a href="parallel_axes.html">
+                        <i class="pe-7s-note2"></i>
+                        <p>PARALLEL AXES</p>
+                    </a>
+                </li>
+                 <li>
+                    <a href="PcaStrat.html">
+                        <i class="pe-7s-note2"></i>
+                        <p>PCA STRATIFIED</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="MdsStrat.html">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>MDS Stratified</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="stackedBar.html">
+                        <i class="pe-7s-news-paper"></i>
+                        <p>Stacked Bar</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="brushMonth.html">
+                        <i class="pe-7s-science"></i>
+                        <p>Brush and Zoom</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="sunBurst.html">
+                        <i class="pe-7s-science"></i>
+                        <p>SUN BURST CHART</p>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="icons">
+                        <i class="pe-7s-science"></i>
+                        <p>Icons</p>
+                    </a>
+                </li> -->
+                <!-- <li>
+                    <a href="maps">
+                        <i class="pe-7s-map-marker"></i>
+                        <p>Maps</p>
+                    </a>
+                </li> -->
+                <!-- <li>
+                    <a href="notifications">
+                        <i class="pe-7s-bell"></i>
+                        <p>Notifications</p>
+                    </a>
+                </li> -->
+				<!-- <li class="active-pro">
+                    <a href="upgrade">
+                        <i class="pe-7s-rocket"></i>
+                        <p>Upgrade to PRO</p>
+                    </a>
+                </li> -->
+            </ul>
+    	</div>
+    </div>
+
+
+
+</body>
+
+    <!--   Core JS Files   -->
+    <script src="static/assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="static/assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--  Checkbox, Radio & Switch Plugins -->
+	<script src="static/assets/js/bootstrap-checkbox-radio-switch.js"></script>
+
+	<!--  Charts Plugin -->
+	<!-- <script src="static/assets/js/chartist.min.js"></script> -->
+
+    <!--  Notifications Plugin    -->
+    <!-- <script src="static/assets/js/bootstrap-notify.js"></script> -->
+
+    <!--  Google Maps Plugin    -->
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script> -->
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="static/assets/js/light-bootstrap-dashboard.js"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<!-- <script src="static/assets/js/demo.js"></script> -->
+
+	<!-- <script type="text/javascript">
+    	$(document).ready(function(){
+
+        	demo.initChartist();
+
+        	$.notify({
+            	icon: 'pe-7s-gift',
+            	message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
+
+            },{
+                type: 'info',
+                timer: 4000
+            });
+
+    	});
+	</script> -->
+
+<svg width="960" height="500"></svg>
+<!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+<script>
+
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 110, left: 300},
+    margin2 = {top: 430, right: 20, bottom: 30, left: 300},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+    height2 = +svg.attr("height") - margin2.top - margin2.bottom;
+
+var parseDate = d3.timeParse("%b %Y");
+
+var x = d3.scaleTime().range([0, width]),
+    x2 = d3.scaleTime().range([0, width]),
+    y = d3.scaleLinear().range([height, 0]),
+    y2 = d3.scaleLinear().range([height2, 0]);
+
+var xAxis = d3.axisBottom(x),
+    xAxis2 = d3.axisBottom(x2),
+    yAxis = d3.axisLeft(y);
+
+var brush = d3.brushX()
+    .extent([[0, 0], [width, height2]])
+    .on("brush end", brushed);
+
+var zoom = d3.zoom()
+    .scaleExtent([1, Infinity])
+    .translateExtent([[0, 0], [width, height]])
+    .extent([[0, 0], [width, height]])
+    .on("zoom", zoomed);
+
+var area = d3.area()
+    .curve(d3.curveMonotoneX)
+    .x(function(d) { return x(d.MONTH); })
+    .y0(height)
+    .y1(function(d) { return y(d.count); });
+
+var area2 = d3.area()
+    .curve(d3.curveMonotoneX)
+    .x(function(d) { return x2(d.MONTH); })
+    .y0(height2)
+    .y1(function(d) { return y2(d.count); });
+
+svg.append("defs").append("clipPath")
+    .attr("id", "clip")
+  .append("rect")
+    .attr("width", width)
+    .attr("height", height);
+
+var focus = svg.append("g")
+    .attr("class", "focus")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var context = svg.append("g")
+    .attr("class", "context")
+    .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+
+d3.csv("./static/month_fatals.csv", type, function(error, data) {
+  if (error) throw error;
+
+  x.domain(d3.extent(data, function(d) { return d.MONTH; }));
+  y.domain([0, d3.max(data, function(d) { return d.count; })]);
+  x2.domain(x.domain());
+  y2.domain(y.domain());
+
+  focus.append("path")
+      .datum(data)
+      .attr("class", "area")
+      .attr("d", area);
+
+  focus.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  focus.append("g")
+      .attr("class", "axis axis--y")
+      .call(yAxis);
+
+  context.append("path")
+      .datum(data)
+      .attr("class", "area")
+      .attr("d", area2);
+
+  context.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2);
+
+  context.append("g")
+      .attr("class", "brush")
+      .call(brush)
+      .call(brush.move, x.range());
+
+  svg.append("rect")
+      .attr("class", "zoom")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .call(zoom);
+});
+
+function brushed() {
+  if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
+  var s = d3.event.selection || x2.range();
+  x.domain(s.map(x2.invert, x2));
+  focus.select(".area").attr("d", area);
+  focus.select(".axis--x").call(xAxis);
+  svg.select(".zoom").call(zoom.transform, d3.zoomIdentity
+      .scale(width / (s[1] - s[0]))
+      .translate(-s[0], 0));
+}
+
+function zoomed() {
+  if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
+  var t = d3.event.transform;
+  x.domain(t.rescaleX(x2).domain());
+  focus.select(".area").attr("d", area);
+  focus.select(".axis--x").call(xAxis);
+  context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
+}
+
+function type(d) {
+  d.MONTH = +d.MONTH;
+  d.count = +d.count;
+  // console.log(d);
+  return d;
+}
+
+</script>
+
+</html>

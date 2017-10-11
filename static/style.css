@@ -1,0 +1,124 @@
+body {
+	background: #2B2529;
+
+}
+
+#page_title {
+	color: #fff;
+	font-size: 35px;
+	text-align: center;
+	margin: 15px 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+#subtitle {
+	color: #A0DDFF;
+	text-align: center;
+}
+
+/*map things*/
+.us_country_map {
+	float: left;
+}
+
+.background {
+  fill: #4B444A;
+  pointer-events: all;
+}
+
+.feature {
+  fill: #e4f0d0;
+  cursor: pointer;
+}
+
+.feature.active {
+  fill: #e00269;
+}
+
+.mesh {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/*sunburst*/
+.sunburst {
+	float: left;
+}
+.percentage {
+	font-size: 22px;
+	font-weight: bolder;
+}
+
+/*filter*/
+.filters {
+	margin-top: 380px;
+	float: left;
+	width: 430px;
+	color: #fff;
+	font-size: 14px;
+}
+.filters h2 {
+	text-align: center;
+}
+.filters table {
+	margin: 0px 20px 20px 20px;
+}
+.filters .btn {
+	background: #2b64bf;
+	/*border-radius: 5px;*/
+	padding: 5px 10px;
+	margin-right: 7px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+.filters .btn.active {
+	background: #132f5b;
+	border: #2457a8 solid 1px;
+}
+.filters input {
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+
+.row {
+	margin-bottom: 13px;
+}
+
+.divide {
+	margin-bottom: 5px;
+}
+
+#age_filter .category { padding-top: 12px; }
+#race_filter .category { padding-top: 12px; }
+
+#gender_filter { height: 45px;}
+#age_filter { height: 70px; }
+#race_filter { height: 70px; }
+
+
+.filters .category {
+	font-size: 21px;
+	float: right;
+	padding-right: 10px;
+}
+.filters .category input {
+	margin-right: 5px;
+}
+
+
+/*copyright things*/
+#copyright {
+	text-align: center;
+	bottom: 0;
+	position: fixed;
+}
+
+#copyright a {
+	color: white;
+}
+
+.tooltip {
+	color: magenta;
+}

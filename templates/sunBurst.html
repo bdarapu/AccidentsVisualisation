@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="Sunburst">
+
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto:300" rel="stylesheet">
+    <link href='./static/style.css' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  </head>
+
+  <body>
+    <h3 id="page_title">USA Accidents</h3>
+    <div class="wrap">
+      <div class="us_country_map">
+        <h3 id="subtitle">Bubble Map of USA Accidents occurred during 2015</h3>
+      </div>
+      <div class="sunburst" ng-controller="MainCtrl as sunburst">
+        <div class="visualization">
+          <sunburst data="sunburst.data"></sunburst>
+        </div>
+      </div>
+
+      <div class="filters">
+        <table>
+          <col width="60">
+          <tr id="gender_filter">
+            <td class="category">Climate:</td>
+            <td id="filters-gender">
+              <div class="row">
+                <label class="btn"><input class="checkbox" id="clear_id" onclick="toggleCheckbox(this)" type="checkbox" name="climate" value="Clear">Clear</label>
+                <label class="btn"><input class="checkbox" id="rain_id" onclick="toggleCheckbox(this)" type="checkbox" name="climate" value="Rain">Rain</label>
+                <label class="btn"><input class="checkbox" id="snow_id" onclick="toggleCheckbox(this)" type="checkbox" name="climate" value="Snow">Snow</label>
+
+              </div>
+
+              <div class="row">
+                <label class="btn"><input class="checkbox" id="windy_id" onclick="toggleCheckbox(this)" type="checkbox" name="climate" value="Windy">Windy</label>
+                <label class="btn"><input class="checkbox" id="unknown_id" onclick="toggleCheckbox(this)" type="checkbox" name="climate" value="Unknown">Unknown</label>
+              </div>
+
+            </td>
+          </tr>
+          <tr id="race_filter">
+            <td class="category">Lighting:</td>
+            <td id="filters-race">
+              <div class="row">
+                <label class="btn"><input class="checkbox" id="Asian_id" onclick="toggleCheckbox(this)" type="checkbox" name="lighting" value="Daylight">Daylight</label>
+                <label class="btn"><input class="checkbox" id="Black_id" onclick="toggleCheckbox(this)" type="checkbox" name="lighting" value="Dark">Dark</label>
+                <label class="btn"><input class="checkbox" id="Hispanic_id" onclick="toggleCheckbox(this)" type="checkbox" name="lighting" value="Dawn">Dawn</label>
+                </div>
+
+              <div class="row">
+                <label class="btn"><input class="checkbox" id="Other_id" onclick="toggleCheckbox(this)" type="checkbox" name="lighting" value="Dusk">Dusk</label>
+                <label class="btn"><input class="checkbox" id="White_id" onclick="toggleCheckbox(this)" type="checkbox" name="lighting" value="Unknown">Unknown</label>
+              </div>
+            </td>
+          </tr>
+          <tr id="age_filter">
+            <td class="category">Fatalities:</td>
+            <td id="filters-age">
+              <div class="row">
+                <label class="btn"><input class="checkbox" id="Youth_id" onclick="toggleCheckbox(this)" type="checkbox" name="age" value="Low">0-1s</label>
+                <label class="btn"><input class="checkbox" id="Twenties_id" onclick="toggleCheckbox(this)" type="checkbox" name="age" value="Mid">2-3s</label>
+                <label class="btn"><input class="checkbox" id="Thirties_id" onclick="toggleCheckbox(this)" type="checkbox" name="age" value="High">3-6s</label>
+              </div>
+            </td>
+          <tr id="body_filter">
+            <td class="category">Drunk:</td>
+         <!--      <span></span>
+              <input onclick="toggleCheckbox(this)" type="checkbox" name="body_camera" value="body_cam">
+             -->
+            <td id="filters-bodycam">
+              <label class="btn"><input class="checkbox" id="BodyCam_id" onclick="toggleCheckbox(this)" type="checkbox" name="drunk" value="TRUE">Yes</label>
+              <label class="btn"><input class="checkbox" id="NoBodyCam_id" onclick="toggleCheckbox(this)" type="checkbox" name="drunk" value="FALSE">No</label>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+
+    <script src="./static/d3/d3.js"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <script src="http://code.angularjs.org/1.3.5/angular.js"></script>
+    <script src="./static/app.js"></script>
+    <script src="./static/map_sunchart.js"></script>
+
+    <script>
+      // Make example display correctly in an iframe on bl.ocks.org
+      d3.select(self.frameElement).style("height", "1000px");
+    </script>
+
+    </br></br></br></br></br></br>
+  </body>
+</html>

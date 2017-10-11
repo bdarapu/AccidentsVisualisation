@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ <meta charset="utf-8">
+ <title>D3 Page Template</title>
+ <script type="text/javascript" src="./static/d3.js"></script>
+ <script type="text/javascript" src="./static/bar_chart.js"></script>
+ <script type="text/javascript" src="./static/ScatterPlot.js"></script>
+ <script type="text/javascript" src="./static/Scatter_Matrix.js"></script>
+ <script type="text/javascript" src="./static/line_chart.js"></script>
+ <style>
+
+ svg {
+  font: 15px sans-serif;
+  padding: 10px;
+}
+
+.axis,
+.frame {
+  shape-rendering: crispEdges;
+}
+
+.axis line {
+  stroke: #ddd;
+}
+
+/*.axis path {
+  display: none;
+}*/
+.cell text {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.frame {
+  fill: none;
+  stroke: #aaa;
+}
+
+circle {
+  fill-opacity: .7;
+}
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis--x path {
+  display: none;
+}
+.circle {
+    fill: #222;
+}
+</style>
+</head>
+
+ <body>
+
+  <select onchange="myFunc()" id="myDropdown">
+	<option> Choose</option>
+  <option value="1">Elbow Plot</option>
+	<option value="2">Scree_Random</option>
+	<option value="3">Scree_Strat</option>
+	<option value="4">Random_PCA</option>
+	<option value="5">Strat_PCA</option>
+	<option value="6">Random_Euclidean</option>
+	<option value="7">Random_Correlation</option>
+	<option value="8">Stratified_Euclidean</option>
+	<option value="9">Stratified_Correlation</option>
+	<option value="10">Scatter_Matrix_Random</option>
+	<option value="11">Scatter_Matrix_Strat</option>
+  <option value="12">Top3PCA_Strat</option>
+  <option value="13">Top3PCA_Rand</option>
+
+  </select>
+ 
+ <svg width="940" height="450"></svg>
+ 
+
+<script type="text/javascript">
+	var w = 940;
+    var h = 300;
+    var pad = 20;
+    var left_pad = 100;
+    var size=230,
+    	padding=20;
+  
+    
+    
+
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 30, left: 70},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom;
+
+function myFunc(){
+  	var choice=document.getElementById("myDropdown").value;
+  	if(choice==1)
+      filename="./static/ElbowPlot.csv"
+  	if(choice==2) 
+  		filename="./static/screePlotRand.csv"
+  	if(choice==3)
+  		filename="./static/screePlotStrat.csv"
+  	if(choice==1)
+      line_chart(filename,"Mean Square Error")
+    if(choice==2 || choice==3)
+  		// bar_chart(filename)
+      line_chart(filename,"Eigen Values")
+  	
+  	if(choice==4)
+  		filename="./static/PCAPlotRand.csv"
+	if(choice==5)
+  		filename="./static/PCAPlotStrat.csv"
+  	
+  	if(choice==6)
+  		filename="./static/RandMdsEuclidean.csv"
+	if(choice==7)
+  		filename="./static/RandMdsCorrelation.csv"
+
+  	if(choice==8)
+  		filename="./static/StratMdsEuclidean.csv"
+  	if(choice==9)
+  		filename="./static/StratMdscorrelation.csv"
+  	if(choice==4 || choice==5 || choice==6 || choice==7 || choice==8 || choice==9)
+  		ScatterPlot(filename)
+
+  	if(choice==10)
+  		filename="./static/ScatterMatrixRand.csv"
+  	if(choice==11)
+  		filename="./static/ScatterMatrixStrat.csv"
+  	if(choice==10 || choice==11)
+  		Scatter_Matrix(filename)
+
+    if(choice == 12)
+      filename = "./static/TopLoadingsRand.csv"
+    if(choice==13)
+      filename = "./static/TopLoadingsStrat.csv"
+    if(choice==12 || choice==13)
+      bar_chart(filename)
+  	
+  	
+  }
+
+
+ 
+ </script>
+ </body>
+</html>
